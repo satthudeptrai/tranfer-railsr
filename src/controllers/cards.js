@@ -14,12 +14,12 @@ class CardController {
           params: {
             items_per_page: items_per_page,
             offset: page_card * items_per_page,
-            // from_date: from_date
+            // from_date: process.argv[3]
           }
         });
         CardModel.create(arrayData);
         if (arrayData.length <= 0) {
-          console.log("break")
+          console.log("tranfer card done")
           break;
         }
         page_card ++;
@@ -30,17 +30,17 @@ class CardController {
           url: '/customer/cards/rules',
           params: !last_seen_id ? {
             items_per_page: items_per_page,
-            // from_date: from_date
+            // from_date: process.argv[3]
           }
           : {
             items_per_page: items_per_page,
             last_seen_id: last_seen_id,
-            // from_date: from_date
+            // from_date: process.argv[3]
           }
         });
         CardRuleModel.create(arrayData);
         if (arrayData.length <= 0) {
-          console.log("break")
+          console.log("tranfer card rule done")
           break;
         }
         last_seen_id = arrayData[arrayData.length - 1]?.card_rule_id;

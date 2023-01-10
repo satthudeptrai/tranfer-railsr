@@ -29,7 +29,8 @@ const TransactionsModel = new Schema({
       "transaction-type-receive",
       "transaction-type-virtual-debit-card-debit",
       "transaction-type-debit-send",
-      "transaction-type-fx"
+      "transaction-type-fx",
+      "transaction-type-card-send"
     ],
     require: true,
   },

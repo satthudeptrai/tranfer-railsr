@@ -12,12 +12,12 @@ class TransactionsController {
           params: {
             items_per_page: items_per_page,
             offset: page_card * items_per_page,
-            // from_date: from_date
+            // from_date: process.argv[3]
           }
         });
         TransactionsModel.create(arrayData);
         if (arrayData.length <= 0) {
-          console.log("break")
+          console.log("tranfer transaction done")
           break;
         }
         page_card ++;

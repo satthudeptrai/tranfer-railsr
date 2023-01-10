@@ -12,7 +12,7 @@ class EndusersController {
           params: {
             items_per_page: items_per_page,
             offset: page * items_per_page,
-            // from_date: from_date
+            // from_date: process.argv[3]
           }
         });
         const detail = data.map(item => {
@@ -25,10 +25,8 @@ class EndusersController {
           const arrayData = res.map(item => item.data);
           EndusersModel.create(arrayData);
         });
-        console.log("data", data)
-        console.log("page", page)
         if (data.length <= 0) {
-          console.log("break")
+          console.log("tranfer enduser done")
           break;
         }
         page ++;

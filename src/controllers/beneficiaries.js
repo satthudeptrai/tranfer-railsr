@@ -39,7 +39,7 @@ class BeneficiariesController {
         })
         await BeneficiariesModel.create(arrayData);
         if (arrayData.length <= 0) {
-          console.log("break")
+          console.log("tranfer beneficiary done")
           break;
         }
         page ++;
