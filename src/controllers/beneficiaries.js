@@ -13,7 +13,7 @@ class BeneficiariesController {
           params: {
             items_per_page: items_per_page,
             offset: page * items_per_page,
-            // from_date: from_date
+            // from_date: process.argv[3] || "2019-01-01"
           }
         });
         const promiseBeneficiariesId = arrayData.map(item => {

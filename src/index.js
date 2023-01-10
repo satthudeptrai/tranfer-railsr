@@ -20,5 +20,4 @@ const traferData = async () => {
   await tranferTransaction;
   await disconnect();
 };
-// traferData();
-console.log("arguments", process.argv)
+traferData();

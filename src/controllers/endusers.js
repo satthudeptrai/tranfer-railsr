@@ -12,7 +12,7 @@ class EndusersController {
           params: {
             items_per_page: items_per_page,
             offset: page * items_per_page,
-            // from_date: process.argv[3]
+            // from_date: process.argv[3] || "2019-01-01"
           }
         });
         const detail = data.map(item => {

@@ -14,7 +14,7 @@ class CardController {
           params: {
             items_per_page: items_per_page,
             offset: page_card * items_per_page,
-            // from_date: process.argv[3]
+            // from_date: process.argv[3] || "2019-01-01"
           }
         });
         CardModel.create(arrayData);
@@ -30,12 +30,12 @@ class CardController {
           url: '/customer/cards/rules',
           params: !last_seen_id ? {
             items_per_page: items_per_page,
-            // from_date: process.argv[3]
+            // from_date: process.argv[3] || "2019-01-01"
           }
           : {
             items_per_page: items_per_page,
             last_seen_id: last_seen_id,
-            // from_date: process.argv[3]
+            // from_date: process.argv[3] || "2019-01-01"
           }
         });
         CardRuleModel.create(arrayData);
